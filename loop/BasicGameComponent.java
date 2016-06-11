@@ -1,9 +1,15 @@
 package loop;
 
-public class BasicGameComponent implements Runnable{
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.*;
+
+public class BasicGameComponent extends JFrame implements Runnable{
 	private final int FPS = 60;
 	private final int MAX_EXCESS_FRAMES = 5;
+	private final boolean DEBUG_MODE = true;
 
+	private BufferedImage renderedImage;	
 	private boolean stopGame;
 	private int currentFps;
 	
@@ -12,11 +18,19 @@ public class BasicGameComponent implements Runnable{
 	}
 	
 	private void render(){
-		
+		Graphics g = renderedImage.getGraphics();
+		g.clearRect(0, 0, renderedImage.getWidth(), renderedImage.getHeight());
+		if (DEBUG_MODE){
+			g.setColor(Color.red);
+			g.drawString(currentFps + " / " + FPS + " fps", 100, 50);
+		}
 	}
 	
 	private void paintScreen(){
-		
+		Graphics g = this.getGraphics();
+		g.drawImage(renderedImage, 0, 0, this.getWidth(), this.getHeight(), null);
+		Toolkit.getDefaultToolkit().sync();
+		g.dispose();
 	}
 	
 	public void run(){
@@ -28,6 +42,7 @@ public class BasicGameComponent implements Runnable{
 		
 		while (!stopGame){
 			startTime = System.nanoTime();
+			skippedFrames = 0;
 			
 			//update the game, render everything and make it visible on screen.
 			updateGame();

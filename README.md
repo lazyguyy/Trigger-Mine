@@ -10,7 +10,7 @@ make the later levels easier and less frustrating
 
 ## In case you don't know what this game is about
 Your goal is to reach a certain depth. Your equipment is a pickaxe which breaks after a certain amount of hits,  
-some gear and cards that buff your character. On the way down you will be able to mine ores so you can upgrade your pickaxe, etc. 
+some gear and cards that buff your character. On the way down you will be able to collect ores so you can upgrade your pickaxe, etc. 
 
 ## Well at least that is what people will see 
 In reality this game will be about ___TRIGGERING A-boy___. Now, who is _A-boy_? (Spoiler: _A-boy_ is not his real name)  

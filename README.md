@@ -14,6 +14,6 @@ some gear and cards that buff your character. On the way down you will be able t
 
 ## Well at least that is what people will see 
 In reality this game will be about ___TRIGGERING A-boy___. Now, who is _A-boy_? (Spoiler: _A-boy_ is not his real name)  
-_A-boy_ is a good friend of (pocket) mine, but he is easily triggered by well-made mobile games such as _Angry Birds_, _Jetpack Joyride_, _Where is my Water_, _Pokémon Go_, and similar stuff.  
+_A-boy_ is a good friend of (pocket) mine (lol couldn't resist this bad joke), but he is easily triggered by well-made mobile games such as _Angry Birds_, _Jetpack Joyride_, _Where is my Water_, _Pokémon Go_, and similar stuff.  
 The game that looks like it triggers him the most (unconfirmed, maybe there is an even better one) seems to be _Pocket Mine 2_. That is the reason why I'm trying to remake it: So that I can play it on my (or his lul) PC as well, maybe with some more _unexpected triggerevents_ added to the game.  
 If you have any recommendations for additional triggers (by that I mean stuff that will most likely trigger _A-boy_), do not forget to hit me up on _TriggersGoHere@gmail.com_ (Note: this mail address doesn't actually exist).

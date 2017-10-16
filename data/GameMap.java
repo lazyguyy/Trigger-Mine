@@ -4,6 +4,8 @@ import java.util.*;
 public class GameMap {
 	private static GameMap map;
 	
+	private final BlockPlacementStrategy blockStrategy;
+	
 	public final int GENERATED_BLOCKS_MIN, GENERATED_BLOCKS_MAX;
 	//How many blocks there should be along the width and the height of the screen
 	public final int X_TILES, Y_TILES;
@@ -17,6 +19,7 @@ public class GameMap {
 		GENERATED_BLOCKS_MAX = 30;
 		X_TILES = 6;
 		Y_TILES = 14;
+		blockStrategy = new RandomizedBlockPlacementStrategy();
 	}
 	
 	public GameMap instance() {
@@ -31,6 +34,7 @@ public class GameMap {
 		for (int y = 0; y < levels; y++) {
 			for (int x = 0; x < X_TILES; x++) {
 				//Some complicated algorithm for generating appropriate maps:
+				blockStrategy.addBlocks(blocks, levels, X_TILES, currentDepth);
 			}
 		}
 	}

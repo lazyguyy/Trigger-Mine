@@ -25,7 +25,7 @@ public class BasicGameComponent extends JPanel implements Runnable{
 	}
 	
 	private void render(){
-		System.out.println("rerendering");
+		//System.out.println("rerendering");
 		Graphics g = renderedImage.getGraphics();
 		g.clearRect(0, 0, renderedImage.getWidth(), renderedImage.getHeight());
 		if (DEBUG_MODE){
@@ -63,7 +63,7 @@ public class BasicGameComponent extends JPanel implements Runnable{
 			//Calculate the time needed.
 			endTime = System.nanoTime();
 			overTime = endTime - startTime - period;
-			System.out.println(startTime + ", " + endTime + ", " + overTime);
+			//System.out.println(startTime + ", " + endTime + ", " + overTime);
 			
 			//In case it took to long, skip a few screen-updates, but update the game anyway to reduce lag.
 			while (overTime > 0 && skippedFrames < MAX_EXCESS_FRAMES){
@@ -84,7 +84,7 @@ public class BasicGameComponent extends JPanel implements Runnable{
 				}				
 			}
 			currentFps = (int) ((1+skippedFrames)*1000000000.0/(System.nanoTime() - startTime));
-			System.out.println(((1+skippedFrames)*1000000000.0/(System.nanoTime() - startTime)));
+			//System.out.println(((1+skippedFrames)*1000000000.0/(System.nanoTime() - startTime)));
 		}
 	}
 }

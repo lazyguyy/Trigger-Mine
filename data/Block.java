@@ -1,6 +1,7 @@
 package data;
 
 import java.awt.image.*;
+import java.awt.*;
 
 public class Block extends Entity{
     private BlockType type;
@@ -15,5 +16,11 @@ public class Block extends Entity{
     
     public int getValue() {
         return type.getValue();
+    }
+    
+    public void draw(Graphics g, int yOffset) {
+    	super.draw(g, yOffset);
+    	g.setColor(Color.black);
+    	g.drawString(String.valueOf(type), x + 2, y + BLOCK_WIDTH/2 - 4);
     }
 }

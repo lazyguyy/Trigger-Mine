@@ -1,6 +1,9 @@
 package data;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.awt.*;
+
 public class GameMap {
 	private static GameMap map;
 	
@@ -12,7 +15,7 @@ public class GameMap {
 	
 	
 	private List<Block> blocks;
-	private int currentDepth, generatedDepth;
+	private int currentDepth, generatedDepth, yOffset;
 	
 	private GameMap() {
 		GENERATED_BLOCKS_MIN = 20;
@@ -20,9 +23,10 @@ public class GameMap {
 		X_TILES = 6;
 		Y_TILES = 14;
 		blockStrategy = new RandomizedBlockPlacementStrategy();
+		blocks = new ArrayList<Block>();
 	}
 	
-	public GameMap instance() {
+	public static GameMap instance() {
 		if (map == null) {
 			map = new GameMap();
 		}
@@ -30,18 +34,21 @@ public class GameMap {
 	}
 	
 	public void generateBlocks() {
-		int levels = GENERATED_BLOCKS_MIN - generatedDepth + currentDepth;
-		for (int y = 0; y < levels; y++) {
-			for (int x = 0; x < X_TILES; x++) {
-				//Some complicated algorithm for generating appropriate maps:
-				blockStrategy.addBlocks(blocks, levels, X_TILES, currentDepth);
-			}
-		}
+		int levels = GENERATED_BLOCKS_MAX - generatedDepth + currentDepth;
+		//Some complicated algorithm for generating appropriate maps:
+		blockStrategy.addBlocks(blocks, levels, X_TILES, currentDepth);
+		generatedDepth = currentDepth + GENERATED_BLOCKS_MAX;
 	}
 	
-	private void update() {
+	public void doLogic() {
 		if (generatedDepth - currentDepth < GENERATED_BLOCKS_MIN);
 			generateBlocks();
+	}
+	
+	public void draw(Graphics g) {
+		for (Block b : blocks) {
+			b.draw(g, yOffset);
+		}
 	}
 	
 }

@@ -4,6 +4,8 @@ import java.awt.image.*;
 import java.awt.*;
 
 public class Block extends Entity{
+
+    protected final static int BLOCK_WIDTH = 100;
     private BlockType type;
     public Block(int x, int y, BufferedImage image, BlockType type) {
         super(x, y, BLOCK_WIDTH, BLOCK_WIDTH, image);

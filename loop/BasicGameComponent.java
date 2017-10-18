@@ -18,6 +18,7 @@ public class BasicGameComponent extends JPanel implements Runnable{
 	private GameMap gm;
 	
 	public BasicGameComponent(int width, int height){
+		System.out.println(width + ", " + height);
 		this.width = width;
 		this.height = height;
 		renderedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -35,7 +36,7 @@ public class BasicGameComponent extends JPanel implements Runnable{
 		gm.draw(g);
 		if (DEBUG_MODE){
 			g.setColor(Color.red);
-			g.drawString(currentFps + " / " + FPS + " fps", 100, 50);
+			g.drawString(currentFps + " / " + FPS + " fps", 10, 10);
 		}
 		g.dispose();
 	}

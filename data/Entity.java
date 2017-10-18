@@ -5,7 +5,6 @@ import java.awt.*;
 
 public abstract class Entity {
     
-    protected final static int BLOCK_WIDTH = 100;
     
     protected int x, y;
     protected int width, height;

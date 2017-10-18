@@ -51,4 +51,22 @@ public class GameMap {
 		}
 	}
 	
+	public boolean isOccupied(int x, int y) {
+		int start = 0, end = blocks.size();
+		while (end - start >= 1) {
+			int mid = (end - start) / 2;
+			Block b = blocks.get(mid);
+			if (b.getX() > x || b.getY() > y) {
+				end = mid;
+			}
+			if (b.getX() + b.getWidth() < x || b.getY() + b.getHeight() < y) {
+				start = mid + 1;
+			}
+			else {
+				return true;
+			}
+		}
+		Block b = blocks.get(start);
+		return b.getX() <= x && x <= b.getX() + b.getHeight() && b.getY() <= y && y <= b.getY() + b.getHeight();
+	}
 }

@@ -43,6 +43,11 @@ public class GameMap {
 	public void doLogic() {
 		if (generatedDepth - currentDepth < GENERATED_BLOCKS_MIN);
 			generateBlocks();
+		for (int i = blocks.size() - 1; i >= 0; i--) {
+			if (blocks.get(i).toDestroy()) {
+				blocks.remove(i);
+			}
+		}
 	}
 	
 	public void draw(Graphics g) {
@@ -51,7 +56,7 @@ public class GameMap {
 		}
 	}
 	
-	public boolean isOccupied(int x, int y) {
+	private Block getBlockAt(int x, int y) {
 		int start = 0, end = blocks.size();
 		while (end - start >= 1) {
 			int mid = (end - start) / 2;
@@ -63,10 +68,14 @@ public class GameMap {
 				start = mid + 1;
 			}
 			else {
-				return true;
+				return null;
 			}
 		}
 		Block b = blocks.get(start);
-		return b.getX() <= x && x <= b.getX() + b.getHeight() && b.getY() <= y && y <= b.getY() + b.getHeight();
+		return b.getX() <= x && x <= b.getX() + b.getHeight() && b.getY() <= y && y <= b.getY() + b.getHeight() ? b : null;
+	}
+	
+	public boolean isOccupied(int x, int y) {
+		return getBlockAt(x, y) == null ? false : true;
 	}
 }

@@ -9,6 +9,8 @@ public class PlayerController {
 	private int xTarget, yTarget;
 	
 	public void doLogic() {
+		Movement m = new Movement(xTarget - sprite.getX(), yTarget - sprite.getY());
+		sprite.processMovement(m);
 	}
 	
 	public void mouseClick(MouseEvent m) {

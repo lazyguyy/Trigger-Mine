@@ -13,6 +13,10 @@ public class Sprite extends Entity implements Controllable{
 		gm = GameMap.instance();
 	}
 	
+	/*
+	 * takes a Movement-object and processes it, so the sprite can try and move.
+	 * @see data.Controllable#processMovement(data.Movement)
+	 */
 	public void processMovement(Movement m) {
 		
 	}
@@ -21,6 +25,7 @@ public class Sprite extends Entity implements Controllable{
 		
 	}
 	
+	//Check whether the suggested movement is allowed and then move.
 	public void move() {
 		int newX = x + m.xDirection, newY = y + m.yDirection;
 		if (!(gm.isOccupied(newX, newY) || gm.isOccupied(newX + width, newY)

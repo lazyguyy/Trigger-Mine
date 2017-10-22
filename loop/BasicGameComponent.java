@@ -5,6 +5,12 @@ import java.awt.*;
 import java.awt.image.*;
 import data.*;
 
+/*
+ * Handles the most basic stuff of the game:
+ *  - the fps loop
+ *  - double buffering
+ *  
+ */
 public class BasicGameComponent extends JPanel implements Runnable{
 	private final int FPS = 60;
 	private final int MAX_EXCESS_FRAMES = 5;
